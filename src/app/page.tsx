@@ -83,6 +83,25 @@ export default function Home() {
           <div className='flex flex-row items-baseline justify-between border-b-2 border-stone-800'>
             <h1>Current Work</h1>
             <div className='flex flex-row space-x-4'>
+              <a href='http://pearce.cv'>
+                <svg
+                  xmlns='http://www.w3.org/2000/svg'
+                  width='24'
+                  height='24'
+                  viewBox='0 0 24 24'
+                  fill='none'
+                  stroke='currentColor'
+                  stroke-width='2'
+                  stroke-linecap='round'
+                  stroke-linejoin='round'
+                  className='lucide lucide-file-user-icon lucide-file-user w-8 h-8 -mb-2'
+                >
+                  <path d='M14 2v4a2 2 0 0 0 2 2h4' />
+                  <path d='M15 18a3 3 0 1 0-6 0' />
+                  <path d='M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z' />
+                  <circle cx='12' cy='13' r='2' />
+                </svg>
+              </a>
               <a href='https://www.github.com/adamhp'>
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
