@@ -1,26 +1,53 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: oklch(97% 0.001 106.424);
+  --foreground: oklch(21.6% 0.006 56.043);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-schibsted-grotesk);
+  --font-mono: var(--font-ibm-plex-mono);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  --foreground: oklch(97% 0.001 106.424);
+  --background: oklch(21.6% 0.006 56.043);
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  color: var(--color-stone-50);
+  font-size: var(--text-2xl);
+  margin-bottom: --spacing(2);
+  margin-top: --spacing(8);
+}
+
+h2 {
+  color: var(--color-stone-100);
+  font-size: var(--text-xl);
+  margin-bottom: --spacing(2);
+  margin-top: --spacing(6);
+}
+
+.highlight {
+  @apply decoration-amber-800 decoration-4 underline underline-offset-4
+}
+
+a {
+  @apply cursor-pointer transition-colors hover:text-amber-600 text-amber-700
+}
+
+p {
+  margin-top: --spacing(4);
+  color: var(--color-stone-300);
+  font-size: var(--text-xl);
 }
