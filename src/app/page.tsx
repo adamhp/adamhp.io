@@ -70,8 +70,9 @@ export default function Home() {
         <div>
           <h1>About</h1>
           <p>
-            Hey, I'm Adam! I'm a full-stack software engineer. I have spent the
-            last ten years building software products and pursuing creativity.
+            Hey, I&apos;m Adam! I&apos;m a full-stack software engineer. I have
+            spent the last ten years building software products and pursuing
+            creativity.
           </p>
           <p>
             I like taking <a href='https://adamhp.photos'>photos</a>.
