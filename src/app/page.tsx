@@ -65,7 +65,7 @@ function WorkItem({
 
 export default function Home() {
   return (
-    <div className='font-sans mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-screen text-lg text-stone-300'>
+    <div className='font-sans mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-screen text-stone-300'>
       <div className='mx-auto max-w-3xl  h-fit flex flex-col mt-32'>
         <div>
           <h1>About</h1>

@@ -49,5 +49,9 @@ a {
 p {
   margin-top: --spacing(4);
   color: var(--color-stone-300);
-  font-size: var(--text-xl);
+  font-size: var(--text-lg);
+}
+
+dt {
+  font-size: var(--text-lg)
 }
