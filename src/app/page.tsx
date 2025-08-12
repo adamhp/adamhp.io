@@ -56,7 +56,7 @@ function WorkItem({
   link: string;
 }) {
   return (
-    <dl className='grid grid-cols-3 my-4'>
+    <dl className='grid grid-cols-3 gap-2 my-4'>
       <dt>{link != '' ? <a href={link}>{title}</a> : title}</dt>
       <dd className='col-span-2'>{description}</dd>
     </dl>
