@@ -13,6 +13,10 @@
     --foreground: var(--color-stone-200);
     --background: var(--color-stone-800);
   }
+
+  a {
+    @apply cursor-pointer transition-colors hover:text-amber-600 text-amber-700
+  }
 }
 
 :root {
@@ -48,8 +52,10 @@ h2 {
 }
 
 a {
-  @apply cursor-pointer transition-colors hover:text-amber-600 text-amber-700
+  @apply cursor-pointer transition-colors hover:text-amber-700 text-amber-800
 }
+
+
 
 .highlight {
   @apply decoration-amber-800 decoration-4 underline underline-offset-4
