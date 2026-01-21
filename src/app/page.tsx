@@ -56,7 +56,7 @@ function WorkItem({
   link: string;
 }) {
   return (
-    <dl className='grid grid-cols-3 gap-2 my-4'>
+    <dl className='grid grid-cols-1 md:grid-cols-3 gap-2 md:my-4 my-8'>
       <dt>{link != '' ? <a href={link}>{title}</a> : title}</dt>
       <dd className='col-span-2'>{description}</dd>
     </dl>
@@ -65,79 +65,28 @@ function WorkItem({
 
 export default function Home() {
   return (
-    <div className='font-sans mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-screen flex flex-col justify-center'>
-      <div className='m-auto max-w-3xl h-fit flex flex-col'>
+    <main className='font-sans h-full pb-32 flex flex-col justify-center'>
+      <div className='md:m-auto max-w-3xl h-full flex flex-col m-4'>
         <div>
-          <h1>About</h1>
-          <p>
-            Hey, I&apos;m Adam! I&apos;m a full-stack software engineer. I have
-            spent the last ten years building software products and pursuing
-            creativity.
-          </p>
-          <p>
-            I like taking <a href='https://adamhp.photos'>photos</a>.
-          </p>
+          <div className='flex flex-row items-baseline justify-between border-b-2 border-foreground/10'>
+            <h1>About</h1>
+            <Socials />
+          </div>
+          <div>
+            <p>
+              Hey, I&apos;m Adam! I&apos;m a full-stack software engineer. I
+              have spent the last ten years building software products and
+              pursuing creativity.
+            </p>
+            <p>
+              I like taking <a href='https://adamhp.photos'>photos</a>.
+            </p>
+          </div>
         </div>
 
         <div>
-          <div className='flex flex-row items-baseline justify-between border-b-2 border-stone-300 dark:border-stone-700'>
+          <div className='flex flex-row items-baseline justify-between border-b-2 border-foreground/10'>
             <h1>Current Work</h1>
-            <div className='flex flex-row justify-end space-x-4'>
-              <a href='http://pearce.cv'>
-                <svg
-                  xmlns='http://www.w3.org/2000/svg'
-                  width='24'
-                  height='24'
-                  viewBox='0 0 24 24'
-                  fill='none'
-                  stroke='currentColor'
-                  strokeWidth='1'
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
-                  className='lucide lucide-file-user-icon lucide-file-user w-8 h-8 -mb-2'
-                >
-                  <path d='M14 2v4a2 2 0 0 0 2 2h4' />
-                  <path d='M15 18a3 3 0 1 0-6 0' />
-                  <path d='M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z' />
-                  <circle cx='12' cy='13' r='2' />
-                </svg>
-              </a>
-              <a href='https://www.github.com/adamhp'>
-                <svg
-                  xmlns='http://www.w3.org/2000/svg'
-                  width='24'
-                  height='24'
-                  viewBox='0 0 24 24'
-                  fill='none'
-                  stroke='currentColor'
-                  strokeWidth='1'
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
-                  className='lucide lucide-github-icon lucide-github w-8 h-8 -mb-2'
-                >
-                  <path d='M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4' />
-                  <path d='M9 18c-4.51 2-5-2-7-2' />
-                </svg>
-              </a>
-              <a href='https://www.linkedin.com/in/adamhp'>
-                <svg
-                  xmlns='http://www.w3.org/2000/svg'
-                  width='24'
-                  height='24'
-                  viewBox='0 0 24 24'
-                  fill='none'
-                  stroke='currentColor'
-                  strokeWidth='1'
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
-                  className='lucide lucide-linkedin-icon lucide-linkedin w-8 h-8 -mb-2'
-                >
-                  <path d='M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z' />
-                  <rect width='4' height='12' x='2' y='9' />
-                  <circle cx='4' cy='4' r='2' />
-                </svg>
-              </a>
-            </div>
           </div>
 
           {currentWork.map((work) => (
@@ -145,7 +94,7 @@ export default function Home() {
           ))}
         </div>
         <div>
-          <div className='flex flex-row items-baseline justify-between border-b-2 border-stone-300 dark:border-stone-700'>
+          <div className='flex flex-row items-baseline justify-between border-b-2 border-foreground/10'>
             <h1>Past Work</h1>
           </div>
           {pastWork.map((work) => (
@@ -153,6 +102,65 @@ export default function Home() {
           ))}
         </div>
       </div>
-    </div>
+    </main>
   );
 }
+
+const Socials = () => (
+  <div className='flex flex-row justify-end space-x-4'>
+    <a href='http://pearce.cv'>
+      <svg
+        xmlns='http://www.w3.org/2000/svg'
+        width='24'
+        height='24'
+        viewBox='0 0 24 24'
+        fill='none'
+        stroke='currentColor'
+        strokeWidth='1'
+        strokeLinecap='round'
+        strokeLinejoin='round'
+        className='lucide lucide-file-user-icon lucide-file-user w-8 h-8 -mb-2'
+      >
+        <path d='M14 2v4a2 2 0 0 0 2 2h4' />
+        <path d='M15 18a3 3 0 1 0-6 0' />
+        <path d='M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z' />
+        <circle cx='12' cy='13' r='2' />
+      </svg>
+    </a>
+    <a href='https://www.github.com/adamhp'>
+      <svg
+        xmlns='http://www.w3.org/2000/svg'
+        width='24'
+        height='24'
+        viewBox='0 0 24 24'
+        fill='none'
+        stroke='currentColor'
+        strokeWidth='1'
+        strokeLinecap='round'
+        strokeLinejoin='round'
+        className='lucide lucide-github-icon lucide-github w-8 h-8 -mb-2'
+      >
+        <path d='M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4' />
+        <path d='M9 18c-4.51 2-5-2-7-2' />
+      </svg>
+    </a>
+    <a href='https://www.linkedin.com/in/adamhp'>
+      <svg
+        xmlns='http://www.w3.org/2000/svg'
+        width='24'
+        height='24'
+        viewBox='0 0 24 24'
+        fill='none'
+        stroke='currentColor'
+        strokeWidth='1'
+        strokeLinecap='round'
+        strokeLinejoin='round'
+        className='lucide lucide-linkedin-icon lucide-linkedin w-8 h-8 -mb-2'
+      >
+        <path d='M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z' />
+        <rect width='4' height='12' x='2' y='9' />
+        <circle cx='4' cy='4' r='2' />
+      </svg>
+    </a>
+  </div>
+);
