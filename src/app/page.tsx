@@ -65,7 +65,7 @@ function WorkItem({
 
 export default function Home() {
   return (
-    <main className='font-sans h-full pb-32 flex flex-col justify-center'>
+    <main className='font-sans h-full p-4 pb-32 flex flex-col justify-center'>
       <div className='mx-auto md:mt-32 max-w-3xl h-full flex flex-col m-4'>
         <div>
           <div className='flex flex-row items-baseline justify-between border-b-2 border-foreground/10'>
