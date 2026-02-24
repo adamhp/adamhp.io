@@ -28,7 +28,11 @@ export default function RootLayout({
       <body
         className={`${schibstedGrotesk.variable} ${ibmPlexMono.variable} antialiased`}
       >
-        {children}
+        <main className='font-sans h-full p-4 pb-32 flex flex-col justify-center'>
+          <div className='mx-auto md:mt-32 max-w-3xl h-full flex flex-col m-4'>
+            {children}
+          </div>
+        </main>
       </body>
     </html>
   );
