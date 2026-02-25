@@ -18,10 +18,6 @@ export function ObsidianImage({ src, alt }: ObsidianImageProps) {
         width={800}
         height={600}
         className='rounded-lg'
-        style={{
-          maxWidth: '100%',
-          height: 'auto',
-        }}
       />
     </div>
   );

@@ -22,6 +22,7 @@ body {
 }
 
 p {
+  opacity: 0.8;
   color: var(--foreground);
   margin-top: --spacing(8);
   font-size: var(--text-xl);
@@ -31,16 +32,30 @@ p {
 
 h1 {
   color: var(--foreground);
-  font-size: var(--text-2xl);
-  margin-bottom: --spacing(2);
-  margin-top: --spacing(8);
+  font-size: var(--text-3xl);
+  margin-bottom: --spacing(4);
+  margin-top: --spacing(16);
 }
 
 h2 {
   color: var(--foreground);
+  font-size: var(--text-2xl);
+  margin-bottom: --spacing(4);
+  margin-top: --spacing(12);
+}
+
+h3 {
+  color: var(--foreground);
   font-size: var(--text-xl);
-  margin-bottom: --spacing(2);
-  margin-top: --spacing(6);
+  margin-bottom: --spacing(4);
+  margin-top: --spacing(12);
+}
+
+h4 {
+  color: var(--foreground);
+  font-size: var(--text-lg);
+  margin-bottom: --spacing(4);
+  margin-top: --spacing(12);
 }
 
 a {
@@ -94,7 +109,7 @@ section.footnotes {
   }
 
   a {
-    @apply cursor-pointer transition-colors hover:text-amber-600 text-amber-700
+    @apply cursor-pointer transition-colors hover:text-amber-500 text-amber-600
   }
 }
 
