@@ -1,0 +1,84 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&display=swap");
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --font-sans: "Schibsted Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "DM Mono", ui-monospace, Courier, monospace;
+  --color-foreground: var(--foreground);
+  --color-foreground-lighter: var(--foreground-lighter);
+  --color-background: var(--background);
+  --color-background-darker: var(--background-darker);
+  --color-accent: var(--accent);
+  --color-line: var(--line);
+}
+
+:root {
+
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground: oklch(87.2% 0.01 258.338);
+    --foreground-lighter: oklch(96.7% 0.003 264.542);
+    --background: oklch(27.8% 0.033 256.848);
+    --background-darker: oklch(21% 0.034 264.665);
+    --accent: oklch(91.7% 0.08 205.041);
+    --line: oklch(71.995% 0.12995 218.684 / 0.30);
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body{
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: var(--text-lg);
+  color: var(--foreground);
+  background-color: var(--background);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: var(--accent);
+}
+
+a:hover {
+  color: oklch(71.5% 0.143 215.221);
+}
+
+code {
+  font-size: 0.9em;
+  border: 1px solid var(--line);
+  background: var(--background-darker);
+  color: var(--foreground);
+  border-radius: 7px;
+  padding: 2px 7px;
+}
+
+pre code {
+  border: 0;
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  font-size: inherit;
+  font-family: var(--font-mono);
+  color: var(--foreground);
+}
+
+.page-wrap {
+  width: min(1080px, calc(100% - 2rem));
+  margin-inline: auto;
+}
+
+.display-title {
+  font-family: var(--font-sans);
+}
