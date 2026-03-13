@@ -13,7 +13,7 @@ function NavLink({ label, to, href }: NavLinkProps) {
   if (to) {
     return (
       <>
-        <Link to={to} className="nav-link">
+        <Link to={to} className="link nav-link">
           {label}
         </Link>
       </>
@@ -24,7 +24,7 @@ function NavLink({ label, to, href }: NavLinkProps) {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="nav-link relative"
+      className="nav-link link relative"
     >
       {label}
       <span className="pointer-events-none select-none cursor-pointer absolute top-0.5 -right-5">

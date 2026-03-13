@@ -42,12 +42,12 @@ function BlogIndex() {
               className="py-8"
             >
               <Link to="/writing/$slug" params={{ slug: post.slug }}>
-                <div className="space-y-1">
-                  <div className="opacity-25 font-mono uppercase text-sm">
+                <div className="transition-all space-y-1 hover:bg-background-darker p-4 rounded-lg">
+                  <div className="text-foreground-lighter font-mono uppercase text-sm">
                     {post.published.toLocaleDateString('en-US')}
                   </div>
-                  <h2 className="md:text-xl">{post.title}</h2>
-                  <div className="opacity-50 text-base">{post.excerpt}</div>
+                  <h2 className="link md:text-2xl">{post.title}</h2>
+                  <div className="text-foreground-lighter">{post.excerpt}</div>
                 </div>
               </Link>
             </motion.li>

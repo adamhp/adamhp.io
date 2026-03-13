@@ -7,12 +7,12 @@ interface WorkItem {
 }
 
 export const WorkItem = ({ title, description, link }: WorkItem) => (
-  <>
-    <dt className="font-semibold">
-      {link != '' ? <a href={link}>{title}</a> : title}
-    </dt>
-    <dd className="col-span-2">{description}</dd>
-  </>
+  <div className="rounded-lg p-4 transition-all hover:bg-background-darker cursor-pointer">
+    <a href={link}>
+      <dt className="font-semibold text-accent">{title}</dt>
+      <dd className="col-span-2">{description}</dd>
+    </a>
+  </div>
 )
 
 export const WorkList = ({

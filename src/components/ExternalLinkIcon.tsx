@@ -6,10 +6,10 @@ const ExternalLinkIcon = () => (
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
-    stroke-width="2"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-    className="lucide lucide-external-link-icon lucide-external-link opacity-25 text-accent w-4 h-4"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className="lucide lucide-external-link-icon lucide-external-link text-accent w-4 h-4"
   >
     <path d="M15 3h6v6" />
     <path d="M10 14 21 3" />

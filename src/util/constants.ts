@@ -23,10 +23,10 @@ export const navLinks = [
   { label: 'Home', to: '/' },
   { label: 'Writing', to: '/writing' },
   { label: 'Resume', to: '/resume' },
+  { label: 'Contact', to: '/contact' },
   { label: 'Photos', href: 'https://adamhp.photos' },
   { label: 'GitHub', href: 'https://github.com/adamhp' },
   { label: 'LinkedIn', href: 'https://linkedin.com/in/adamhp' },
-  { label: 'Contact', to: '/contact' },
 ]
 
 export const pastWork = [

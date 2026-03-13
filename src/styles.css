@@ -2,6 +2,9 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
+/* Supports `dark:` utilities when a manual theme is set. */
+@custom-variant dark (&:where(.dark, .dark *, [data-theme='dark'], [data-theme='dark'] *));
+
 @theme {
   --font-sans: "Schibsted Grotesk", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "DM Mono", ui-monospace, Courier, monospace;
@@ -10,22 +13,44 @@
   --color-background: var(--background);
   --color-background-darker: var(--background-darker);
   --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
   --color-line: var(--line);
 }
 
-:root {
-
+:root,
+:root[data-theme='light'] {
+  color-scheme: light;
+  --foreground: oklch(27.8% 0.033 256.848);
+  --foreground-lighter: oklch(44.225% 0.0163 285.678 / 0.9);
+  --background: oklch(96.7% 0.001 286.375);
+  --background-darker: oklch(92% 0.004 286.32);
+  --accent: oklch(44.3% 0.11 240.79);
+  --accent-hover: oklch(50% 0.134 242.749);
+  --line: oklch(58% 0.07 228 / 0.25);
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme='light']) {
+    color-scheme: dark;
     --foreground: oklch(87.2% 0.01 258.338);
     --foreground-lighter: oklch(96.7% 0.003 264.542);
     --background: oklch(27.8% 0.033 256.848);
     --background-darker: oklch(21% 0.034 264.665);
-    --accent: oklch(91.7% 0.08 205.041);
-    --line: oklch(71.995% 0.12995 218.684 / 0.30);
+    --accent: oklch(90% 0.09 233);
+    --accent-hover: oklch(86% 0.12 214);
+    --line: oklch(75% 0.09 233 / 0.5);
   }
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --foreground: oklch(87.2% 0.01 258.338);
+  --foreground-lighter: oklch(96.7% 0.003 264.542);
+  --background: oklch(27.8% 0.033 256.848);
+  --background-darker: oklch(21% 0.034 264.665);
+  --accent: oklch(91.7% 0.08 205.041);
+  --accent-hover: oklch(86% 0.12 214);
+  --line: oklch(71.995% 0.12995 218.684 / 0.30);
 }
 
 * {
@@ -47,12 +72,13 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  color: var(--accent);
-}
-
-a:hover {
-  color: oklch(71.5% 0.143 215.221);
+@utility prose {
+  code {
+    &::before,
+    &::after {
+      content: none;
+    }
+  }
 }
 
 code {
@@ -81,4 +107,13 @@ pre code {
 
 .display-title {
   font-family: var(--font-sans);
+}
+
+.link {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.link:hover {
+  color: var(--accent-hover);
 }

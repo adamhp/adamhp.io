@@ -17,18 +17,22 @@ export const Route = createFileRoute('/writing/$slug')({
 const proseClasses = [
   'prose',
   'lg:prose-xl',
+  'prose-p:text-foreground',
   'prose-a:no-underline',
   'prose-headings:text-accent',
-  'prose-p:text-foreground',
-  'prose-blockquote:opacity-75',
-  'prose-blockquote:border-accent',
+  'prose-a:text-accent',
+  'prose-a:hover:text-accent-hover',
+  'prose-blockquote:border-line',
   'prose-blockquote:mx-4',
   'prose-blockquote:my-12',
+  'prose-blockquote:prose-p:text-foreground-lighter',
   'prose-h1:text-3xl',
   'prose-h2:text-2xl',
   'prose-h3:text-xl',
   'prose-h4:text-xl',
   'prose-h5:text-xl',
+  'prose-code:background-color-background-darker',
+  'prose-code:font-normal',
 ]
 
 function BlogPost() {

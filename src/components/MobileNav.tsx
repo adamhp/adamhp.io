@@ -28,7 +28,7 @@ const MobileNav = () => (
                 },
               },
             }}
-            className="bg-background-darker opacity-100 p-4 m-2 rounded-lg w-[calc(100vw-1rem)] space-y-4 text-xl"
+            className="bg-background-darker p-4 m-2 rounded-lg w-[calc(100vw-1rem)] space-y-4 text-xl"
             anchor="bottom"
           >
             {navLinks.map((link) => (
@@ -45,7 +45,7 @@ const MobileNav = () => (
                       <Link
                         to={link.to}
                         onClick={close}
-                        className={`block data-focus:bg-blue-100`}
+                        className={`link block rounded-sm px-1 data-focus:bg-line/20`}
                       >
                         {link.label}
                       </Link>
@@ -55,7 +55,7 @@ const MobileNav = () => (
                         onClick={close}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className={`block data-focus:bg-blue-100 relative`}
+                        className={`link block rounded-sm px-1 data-focus:bg-line/20 relative`}
                       >
                         {link.label}
                         <span className="pointer-events-none select-none cursor-pointer absolute top-0.5 ml-1 md:ml-0 md:-right-5">
@@ -82,9 +82,9 @@ const NavIcon = () => (
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
-    stroke-width="2"
-    stroke-linecap="round"
-    stroke-linejoin="round"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
     className="lucide lucide-menu-icon lucide-menu"
   >
     <path d="M4 5h16" />

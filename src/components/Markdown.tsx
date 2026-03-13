@@ -32,7 +32,7 @@ export function Markdown({ post, className }: MarkdownProps) {
 
   return (
     <>
-      <div className="uppercase opacity-25 font-mono mb-4">
+      <div className="uppercase text-foreground-lighter font-mono mb-4">
         Published {post.published.toLocaleDateString('en-US')}
       </div>
       <article className={className}>{parse(result.markup, options)}</article>

@@ -18,6 +18,7 @@ function App() {
           <p>
             I like <Link to="/writing">writing</Link> and taking{' '}
             <a
+              className="link"
               target="_blank"
               rel="noopener noreferrer"
               href="https://adamhp.photos"
@@ -27,6 +28,7 @@ function App() {
             , and I'm always open for a chat about software, creativity, or
             anything in between, so feel free to{' '}
             <a
+              className="link"
               target="_blank"
               rel="noopener noreferrer"
               href="https://cal.com/adamhp"
