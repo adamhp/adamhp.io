@@ -1,0 +1,35 @@
+---
+import { ViewTransitions } from 'astro:transitions'
+import Footer from '../components/Footer.astro'
+import Header from '../components/Header.astro'
+import '../styles.css'
+
+interface Props {
+  title?: string
+  description?: string
+}
+
+const {
+  title = 'adamhp.io',
+  description =
+    'Personal website of Adam Pearce, a full-stack software engineer and creative technologist.',
+} = Astro.props
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="manifest" href="/manifest.json" />
+    <ViewTransitions />
+  </head>
+  <body>
+    <Header />
+    <slot />
+    <Footer />
+  </body>
+</html>
