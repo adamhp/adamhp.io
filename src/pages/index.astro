@@ -1,0 +1,51 @@
+---
+import Base from '../layouts/Base.astro'
+import PageContainer from '../components/PageContainer.astro'
+import WorkList from '../components/WorkList.astro'
+import { currentWork, pastWork } from '../data/work'
+---
+
+<Base>
+  <PageContainer>
+    <section>
+      <div class="space-y-4 text-xl">
+        <p>
+          Hey, I&apos;m Adam! I&apos;m a full-stack software engineer, and I&apos;ve spent the last
+          ten years building software products and pursuing creativity.
+        </p>
+        <p>
+          I like <a href="/writing" class="link">writing</a> and taking <a
+            class="link"
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://adamhp.photos">photos</a
+          >, and I&apos;m always open for a chat about software, creativity, or anything in between,
+          so feel free to <a
+            class="link"
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://cal.com/adamhp">reach out.</a
+          >
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <div class="space-y-4">
+        <div class="border-b-2 border-line mb-8">
+          <h1 class="font-mono uppercase">Current Work</h1>
+        </div>
+        <WorkList workList={currentWork} />
+      </div>
+    </section>
+
+    <section>
+      <div>
+        <div class="border-b-2 border-line mb-8">
+          <h1 class="font-mono uppercase">Past Work</h1>
+        </div>
+        <WorkList delay={0.3} workList={pastWork} />
+      </div>
+    </section>
+  </PageContainer>
+</Base>

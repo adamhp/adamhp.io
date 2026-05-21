@@ -1,0 +1,56 @@
+---
+import { getCollection } from 'astro:content'
+import Base from '../../layouts/Base.astro'
+import PageContainer from '../../components/PageContainer.astro'
+
+const posts = await getCollection('writing')
+const sortedPosts = posts.sort(
+  (a, b) =>
+    new Date(b.data.published).getTime() - new Date(a.data.published).getTime(),
+)
+---
+
+<Base title="Writing — adamhp.io">
+  <PageContainer>
+    <section>
+      <h1 class="uppercase font-mono border-b-2 border-line mb-4">WRITING</h1>
+      <ul class="divide-y divide-line/50 list-none p-0">
+        {
+          sortedPosts.map((post, i) => (
+            <li
+              class="py-8 post-item"
+              style={`animation-delay: ${i * 0.1}s`}
+            >
+              <a href={`/writing/${post.id}`}>
+                <div class="transition-all space-y-1 hover:bg-background-darker p-4 rounded-lg">
+                  <div class="text-foreground-lighter font-mono uppercase text-sm">
+                    {post.data.published.toLocaleDateString('en-US')}
+                  </div>
+                  <h2 class="link md:text-2xl">{post.data.title}</h2>
+                  <div class="text-foreground-lighter">{post.data.excerpt}</div>
+                </div>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+  </PageContainer>
+</Base>
+
+<style>
+  .post-item {
+    animation: fadeInRight 0.5s ease-out both;
+  }
+
+  @keyframes fadeInRight {
+    from {
+      opacity: 0;
+      transform: translateX(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+</style>

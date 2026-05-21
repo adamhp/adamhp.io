@@ -1,0 +1,52 @@
+---
+import { getCollection, render } from 'astro:content'
+import Base from '../../layouts/Base.astro'
+import PageContainer from '../../components/PageContainer.astro'
+
+export async function getStaticPaths() {
+  const posts = await getCollection('writing')
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }))
+}
+
+const { post } = Astro.props
+const { Content } = await render(post)
+
+const proseClasses = [
+  'prose',
+  'lg:prose-xl',
+  'prose-p:text-foreground',
+  'prose-a:no-underline',
+  'prose-headings:text-accent',
+  'prose-a:text-accent',
+  'prose-a:hover:text-accent-hover',
+  'prose-blockquote:border-line',
+  'prose-blockquote:mx-4',
+  'prose-blockquote:my-12',
+  'prose-blockquote:prose-p:text-foreground-lighter',
+  'prose-h1:text-3xl',
+  'prose-h2:text-2xl',
+  'prose-h3:text-xl',
+  'prose-h4:text-xl',
+  'prose-h5:text-xl',
+  'prose-code:font-normal',
+].join(' ')
+---
+
+<Base title={`${post.data.title} — adamhp.io`}>
+  <PageContainer>
+    <div class="uppercase text-foreground-lighter font-mono mb-4">
+      Published {post.data.published.toLocaleDateString('en-US')}
+    </div>
+    <article class={proseClasses}>
+      <Content />
+    </article>
+    <footer
+      class="pb-64 mt-16 max-w-2xl mx-auto flex flex-row items-baseline space-x-8 py-4 text-lg font-mono uppercase justify-center"
+    >
+      <a href="/" class="link">Back to home</a>
+    </footer>
+  </PageContainer>
+</Base>

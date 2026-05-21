@@ -1,0 +1,59 @@
+---
+import Base from '../layouts/Base.astro'
+import PageContainer from '../components/PageContainer.astro'
+---
+
+<Base title="Contact — adamhp.io">
+  <PageContainer>
+    <div class="text-lg">
+      Email me at <a class="link" href="mailto:adamp319@gmail.com">adamp319@gmail.com</a>, or book a
+      time to chat below.
+    </div>
+    <div
+      id="cal-embed"
+      class="w-full -mt-48 md:-mt-16"
+      style="overflow: hidden; height: 1000px;"
+    >
+    </div>
+  </PageContainer>
+</Base>
+
+<script>
+  // @ts-nocheck
+  ;(function (C: any, A: string, L: string) {
+    const p = (a: any, ar: any) => {
+      a.q.push(ar)
+    }
+    const d = C.document
+    C.Cal =
+      C.Cal ||
+      function (...args: any[]) {
+        const cal = C.Cal
+        if (!cal.loaded) {
+          cal.ns = {}
+          cal.q = cal.q || []
+          d.head.appendChild(d.createElement('script')).src = A
+          cal.loaded = true
+        }
+        if (args[0] === L) {
+          const api = (...a: any[]) => p(api, a)
+          const namespace = args[1]
+          ;(api as any).q = []
+          typeof namespace === 'string'
+            ? ((cal.ns[namespace] = api) && p(api, args))
+            : p(cal, args)
+          return
+        }
+        p(cal, args)
+      }
+  })(window, 'https://app.cal.com/embed/embed.js', 'init')
+
+  const Cal = (window as any).Cal
+  Cal('init', '30min', { origin: 'https://cal.com' })
+  Cal.ns['30min']('inline', {
+    elementOrSelector: '#cal-embed',
+    config: { layout: 'month_view', useSlotsViewOnSmallScreen: 'true' },
+    calLink: 'adamhp/30min',
+  })
+  Cal.ns['30min']('ui', { hideEventTypeDetails: false, layout: 'month_view' })
+</script>
