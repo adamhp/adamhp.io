@@ -1,0 +1,96 @@
+---
+import { navLinks } from '../data/work'
+---
+
+<nav class="m-2">
+  <button
+    id="mobile-nav-btn"
+    class="bg-background-darker p-2 rounded-lg"
+    aria-label="Open navigation"
+    aria-expanded="false"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <path d="M4 5h16"></path>
+      <path d="M4 12h16"></path>
+      <path d="M4 19h16"></path>
+    </svg>
+  </button>
+
+  <div
+    id="mobile-nav-menu"
+    class="hidden bg-background-darker p-4 rounded-lg w-[calc(100vw-1rem)] space-y-4 text-xl mt-2"
+  >
+    {
+      navLinks.map((link) =>
+        link.to ? (
+          <a href={link.to} class="link block rounded-sm px-1">
+            {link.label}
+          </a>
+        ) : (
+          <a
+            href={link.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="link block rounded-sm px-1 relative"
+          >
+            {link.label}
+            <span class="pointer-events-none select-none absolute top-0.5 ml-1">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="12"
+                height="12"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M15 3h6v6"></path>
+                <path d="M10 14L21 3"></path>
+                <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
+              </svg>
+            </span>
+          </a>
+        ),
+      )
+    }
+  </div>
+</nav>
+
+<script>
+  const btn = document.getElementById('mobile-nav-btn')
+  const menu = document.getElementById('mobile-nav-menu')
+
+  btn?.addEventListener('click', () => {
+    const isHidden = menu?.classList.contains('hidden')
+    menu?.classList.toggle('hidden', !isHidden)
+    btn.setAttribute('aria-expanded', String(isHidden))
+  })
+
+  document.addEventListener('click', (e) => {
+    if (
+      !btn?.contains(e.target as Node) &&
+      !menu?.contains(e.target as Node)
+    ) {
+      menu?.classList.add('hidden')
+      btn?.setAttribute('aria-expanded', 'false')
+    }
+  })
+
+  // Close menu after View Transitions navigation
+  document.addEventListener('astro:page-load', () => {
+    menu?.classList.add('hidden')
+    btn?.setAttribute('aria-expanded', 'false')
+  })
+</script>

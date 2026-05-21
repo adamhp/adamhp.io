@@ -1,0 +1,51 @@
+---
+import { navLinks } from '../data/work'
+import MobileNav from './MobileNav.astro'
+---
+
+<header>
+  <div class="hidden md:block">
+    <nav
+      class="h-24 max-w-2xl mx-auto flex flex-row items-end space-x-8 py-4 text-base font-mono uppercase justify-between"
+    >
+      {
+        navLinks.map((link) =>
+          link.to ? (
+            <a href={link.to} class="link nav-link">
+              {link.label}
+            </a>
+          ) : (
+            <a
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="nav-link link relative"
+            >
+              {link.label}
+              <span class="pointer-events-none select-none absolute top-0.5 -right-5">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="12"
+                  height="12"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M15 3h6v6"></path>
+                  <path d="M10 14L21 3"></path>
+                  <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
+                </svg>
+              </span>
+            </a>
+          ),
+        )
+      }
+    </nav>
+  </div>
+  <div class="md:hidden">
+    <MobileNav />
+  </div>
+</header>

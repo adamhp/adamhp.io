@@ -1,0 +1,46 @@
+---
+import type { WorkItem } from '../data/work'
+
+interface Props {
+  workList: WorkItem[]
+  delay?: number
+}
+
+const { workList, delay = 0 } = Astro.props
+---
+
+<div class="space-y-4">
+  {
+    workList.map((work, i) => (
+      <div
+        class="work-item"
+        style={`animation-delay: ${delay + i * 0.1}s`}
+      >
+        <a
+          href={work.link}
+          class="block rounded-lg p-4 transition-all hover:bg-background-darker cursor-pointer"
+        >
+          <dt class="font-semibold text-accent">{work.title}</dt>
+          <dd class="col-span-2">{work.description}</dd>
+        </a>
+      </div>
+    ))
+  }
+</div>
+
+<style>
+  .work-item {
+    animation: fadeInRight 0.5s ease-out both;
+  }
+
+  @keyframes fadeInRight {
+    from {
+      opacity: 0;
+      transform: translateX(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+</style>
