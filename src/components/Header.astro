@@ -11,7 +11,7 @@ import MobileNav from './MobileNav.astro'
       {
         navLinks.map((link) =>
           link.to ? (
-            <a href={link.to} class="link nav-link">
+            <a href={link.to} class="link">
               {link.label}
             </a>
           ) : (
@@ -19,7 +19,7 @@ import MobileNav from './MobileNav.astro'
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"
-              class="nav-link link relative"
+              class="link relative"
             >
               {link.label}
               <span class="pointer-events-none select-none absolute top-0.5 -right-5">

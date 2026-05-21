@@ -24,7 +24,7 @@ const sortedPosts = posts.sort(
               <a href={`/writing/${post.id}`}>
                 <div class="transition-all space-y-1 hover:bg-background-darker p-4 rounded-lg">
                   <div class="text-foreground-lighter font-mono uppercase text-sm">
-                    {post.data.published.toLocaleDateString('en-US')}
+                    {post.data.published.toLocaleDateString('en-US', { timeZone: 'UTC' })}
                   </div>
                   <h2 class="link md:text-2xl">{post.data.title}</h2>
                   <div class="text-foreground-lighter">{post.data.excerpt}</div>

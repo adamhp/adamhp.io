@@ -38,7 +38,7 @@ const proseClasses = [
 <Base title={`${post.data.title} — adamhp.io`}>
   <PageContainer>
     <div class="uppercase text-foreground-lighter font-mono mb-4">
-      Published {post.data.published.toLocaleDateString('en-US')}
+      Published {post.data.published.toLocaleDateString('en-US', { timeZone: 'UTC' })}
     </div>
     <article class={proseClasses}>
       <Content />
