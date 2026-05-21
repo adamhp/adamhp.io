@@ -9,7 +9,7 @@ interface Props {
 const { workList, delay = 0 } = Astro.props
 ---
 
-<div class="space-y-4">
+<dl class="space-y-4">
   {
     workList.map((work, i) => (
       <div
@@ -26,7 +26,7 @@ const { workList, delay = 0 } = Astro.props
       </div>
     ))
   }
-</div>
+</dl>
 
 <style>
   .work-item {

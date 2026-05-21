@@ -75,7 +75,7 @@ import { navLinks } from '../data/work'
   btn?.addEventListener('click', () => {
     const isHidden = menu?.classList.contains('hidden')
     menu?.classList.toggle('hidden', !isHidden)
-    btn.setAttribute('aria-expanded', String(isHidden))
+    btn?.setAttribute('aria-expanded', String(isHidden))
   })
 
   document.addEventListener('click', (e) => {
