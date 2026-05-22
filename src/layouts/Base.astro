@@ -7,13 +7,18 @@ import '../styles.css'
 interface Props {
   title?: string
   description?: string
+  ogType?: string
+  jsonLD?: string
 }
 
 const {
   title = 'adamhp.io',
-  description =
-    'Personal website of Adam Pearce, a full-stack software engineer and creative technologist.',
+  description = 'Personal website of Adam Pearce, a full-stack software engineer and creative technologist.',
+  ogType = 'website',
+  jsonLD,
 } = Astro.props
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site)
 ---
 
 <!doctype html>
@@ -22,9 +27,26 @@ const {
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:site_name" content="adamhp.io" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+
     <title>{title}</title>
     <link rel="icon" href="/favicon.ico" />
     <link rel="manifest" href="/manifest.json" />
+
+    {jsonLD && <script type="application/ld+json" set:html={jsonLD} />}
+
     <ClientRouter />
   </head>
   <body>
