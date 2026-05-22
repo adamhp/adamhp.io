@@ -33,19 +33,42 @@ const proseClasses = [
   'prose-h5:text-xl',
   'prose-code:font-normal',
 ].join(' ')
+
+const jsonLD = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: post.data.title,
+  description: post.data.excerpt ?? '',
+  datePublished: post.data.published.toISOString(),
+  author: {
+    '@type': 'Person',
+    name: 'Adam Pearce',
+    url: 'https://adamhp.io',
+  },
+  url: `https://adamhp.io/writing/${post.id}`,
+})
 ---
 
-<Base title={`${post.data.title} — adamhp.io`}>
+<Base
+  title={`${post.data.title} — adamhp.io`}
+  description={post.data.excerpt}
+  ogType="article"
+  jsonLD={jsonLD}
+>
   <PageContainer>
-    <div class="uppercase text-foreground-lighter font-mono mb-4">
-      Published {post.data.published.toLocaleDateString('en-US', { timeZone: 'UTC' })}
+    <div class="uppercase text-foreground-lighter font-mono mb-2 text-sm">
+      Published <time datetime={post.data.published.toISOString()}>
+        {post.data.published.toLocaleDateString('en-US', { timeZone: 'UTC' })}
+      </time>
     </div>
+    <h1 class="text-3xl font-bold mb-8">{post.data.title}</h1>
     <article class={proseClasses}>
       <Content />
     </article>
     <footer
       class="pb-64 mt-16 max-w-2xl mx-auto flex flex-row items-baseline space-x-8 py-4 text-lg font-mono uppercase justify-center"
     >
+      <a href="/writing" class="link">Back to writing</a>
       <a href="/" class="link">Back to home</a>
     </footer>
   </PageContainer>
