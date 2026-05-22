@@ -3,12 +3,28 @@ import Base from '../layouts/Base.astro'
 import PageContainer from '../components/PageContainer.astro'
 ---
 
-<Base title="Resume — adamhp.io">
+<Base
+  title="Resume — adamhp.io"
+  description="Resume of Adam Pearce, full-stack software engineer and solutions architect."
+>
   <PageContainer>
+    <div class="flex justify-between items-baseline mb-4">
+      <h1 class="uppercase font-mono border-b-2 border-line">Resume</h1>
+      <a
+        href="/Adam Pearce Resume 2026.pdf"
+        download
+        class="link font-mono text-sm uppercase"
+      >Download PDF</a>
+    </div>
     <object
       data="/Adam Pearce Resume 2026.pdf"
       type="application/pdf"
       class="w-full h-full min-h-[calc(100vh-6rem)]"
-    ></object>
+    >
+      <p class="text-foreground-lighter font-mono">
+        PDF preview not available in your browser.
+        <a href="/Adam Pearce Resume 2026.pdf" download class="link">Download the resume instead.</a>
+      </p>
+    </object>
   </PageContainer>
 </Base>
