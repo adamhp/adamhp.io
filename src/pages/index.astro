@@ -3,11 +3,24 @@ import Base from '../layouts/Base.astro'
 import PageContainer from '../components/PageContainer.astro'
 import WorkList from '../components/WorkList.astro'
 import { currentWork, pastWork } from '../data/work'
+
+const description =
+  'Personal website of Adam Pearce, a full-stack software engineer and creative technologist based in the US.'
+
+const jsonLD = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Adam Pearce',
+  url: 'https://adamhp.io',
+  jobTitle: 'Full-Stack Software Engineer',
+  sameAs: ['https://github.com/adamhp', 'https://linkedin.com/in/adamhp'],
+})
 ---
 
-<Base>
+<Base description={description} jsonLD={jsonLD}>
   <PageContainer>
     <section>
+      <h1 class="uppercase font-mono border-b-2 border-line mb-8">Adam Pearce</h1>
       <div class="space-y-4 text-xl">
         <p>
           Hey, I&apos;m Adam! I&apos;m a full-stack software engineer, and I&apos;ve spent the last
