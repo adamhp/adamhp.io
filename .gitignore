@@ -13,3 +13,6 @@ __unconfig*
 todos.json
 .content-collections
 .astro
+# Local Netlify folder
+.netlify
+.og-fonts
