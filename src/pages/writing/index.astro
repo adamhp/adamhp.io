@@ -25,7 +25,7 @@ const sortedPosts = posts.sort(
                 <div class="transition-all space-y-1 hover:bg-background-darker p-4 rounded-lg">
                   <div class="text-foreground-lighter font-mono uppercase text-sm">
                     <time datetime={post.data.published.toISOString()}>
-                      {post.data.published.toLocaleDateString('en-US', { timeZone: 'UTC' })}
+                      {post.data.published.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' })}
                     </time>
                   </div>
                   <h2 class="link md:text-2xl">{post.data.title}</h2>
