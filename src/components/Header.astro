@@ -12,6 +12,7 @@ const isActive = (to: string) => {
 <header>
   <div class="hidden md:block">
     <nav
+      aria-label="Main"
       class="h-24 max-w-2xl mx-auto flex flex-row items-end space-x-8 py-4 text-base font-mono uppercase justify-between"
     >
       {
@@ -30,6 +31,7 @@ const isActive = (to: string) => {
               {link.label}
               <span class="pointer-events-none select-none absolute top-0.5 -right-5">
                 <svg
+                  aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   width="12"
                   height="12"
