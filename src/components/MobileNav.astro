@@ -93,6 +93,7 @@ const isActive = (to: string) => {
     ) {
       menu?.classList.add('hidden')
       btn?.setAttribute('aria-expanded', 'false')
+      btn?.setAttribute('aria-label', 'Open navigation')
     }
   })
 
@@ -100,6 +101,7 @@ const isActive = (to: string) => {
   document.addEventListener('astro:page-load', () => {
     menu?.classList.add('hidden')
     btn?.setAttribute('aria-expanded', 'false')
+    btn?.setAttribute('aria-label', 'Open navigation')
   })
 </script>
 
