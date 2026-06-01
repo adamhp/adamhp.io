@@ -41,18 +41,20 @@ const sortedPosts = posts.sort(
 </Base>
 
 <style>
-  .post-item {
-    animation: fadeInRight 0.5s ease-out both;
-  }
-
-  @keyframes fadeInRight {
-    from {
-      opacity: 0;
-      transform: translateX(20px);
+  @media (prefers-reduced-motion: no-preference) {
+    .post-item {
+      animation: fadeInRight 0.5s ease-out both;
     }
-    to {
-      opacity: 1;
-      transform: translateX(0);
+
+    @keyframes fadeInRight {
+      from {
+        opacity: 0;
+        transform: translateX(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
     }
   }
 </style>
