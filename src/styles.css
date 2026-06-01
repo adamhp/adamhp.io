@@ -21,7 +21,7 @@
 :root[data-theme='light'] {
   color-scheme: light;
   --foreground: oklch(27.8% 0.033 256.848);
-  --foreground-lighter: oklch(44.225% 0.0163 285.678 / 0.9);
+  --foreground-lighter: oklch(49.5% 0.015 286);
   --background: oklch(96.7% 0.001 286.375);
   --background-darker: oklch(92% 0.004 286.32);
   --accent: oklch(44.3% 0.11 240.79);
@@ -64,7 +64,12 @@ body{
 
 html {
   scrollbar-gutter: stable;
-  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 body {
@@ -128,4 +133,10 @@ h3 {
 
 .link:hover {
   color: var(--accent-hover);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 3px;
 }
