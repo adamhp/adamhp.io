@@ -1,12 +1,12 @@
 export type NavLink =
   | { label: string; to: string; href?: never }
-  | { label: string; href: string; to?: never }
+  | { label: string; href: string; to?: never };
 
 export type WorkItem = {
-  title: string
-  description: string
-  link: string
-}
+  title: string;
+  description: string;
+  link: string;
+};
 
 export const currentWork: WorkItem[] = [
   {
@@ -27,7 +27,13 @@ export const currentWork: WorkItem[] = [
       'An iOS app for adding borders to multiple images while preserving aspect ratio.',
     link: 'https://multiborder.io',
   },
-]
+  {
+    title: 'pf2e.fyi',
+    description:
+      'A searchable reference and graph visualization inspired by Obsidian, for the Pathfinder 2e tabletop roleplaying game.',
+    link: 'https://pf2e.fyi',
+  },
+];
 
 export const navLinks: NavLink[] = [
   { label: 'Home', to: '/' },
@@ -37,7 +43,7 @@ export const navLinks: NavLink[] = [
   { label: 'Photos', href: 'https://adamhp.photos' },
   { label: 'GitHub', href: 'https://github.com/adamhp' },
   { label: 'LinkedIn', href: 'https://linkedin.com/in/adamhp' },
-]
+];
 
 export const pastWork: WorkItem[] = [
   {
@@ -45,12 +51,6 @@ export const pastWork: WorkItem[] = [
     description:
       'Early engineer at a boutique cybersecurity software company. Grew from 10 employees to 150 before being acquired by Enlightenment Capital.',
     link: 'https://www.crunchbase.com/acquisition/agile-defense-acquires-xor-security--c4bddf80',
-  },
-  {
-    title: 'oeno.chat',
-    description:
-      'An exploratory weekend project using ChatGPT to find the best wine pairings for food.',
-    link: 'https://oeno.chat',
   },
   {
     title: 'lasso.so',
@@ -64,4 +64,4 @@ export const pastWork: WorkItem[] = [
       "A SaaS product that analyzed creators' Twitter audiences to discover unique customer profiles to derive opportunities for monetization.",
     link: '/writing/decisions#wildfire',
   },
-]
+];
