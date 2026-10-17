@@ -12,7 +12,7 @@ export const currentWork: WorkItem[] = [
   {
     title: 'Agile Defense',
     description:
-      'I am a full-time Staff Engineer and Solutions Architect for Agile Defense. I consult on cybersecurity software and other technical solutions for the public sector.',
+      'I am a full-time Staff Engineer and Solutions Architect, consulting on cybersecurity, software, DevOps, and other technical solutions for the public sector.',
     link: 'https://agiledefense.com',
   },
   {
