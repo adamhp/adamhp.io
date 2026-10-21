@@ -10,10 +10,10 @@ export type WorkItem = {
 
 export const currentWork: WorkItem[] = [
   {
-    title: 'Agile Defense',
+    title: 'Maximus',
     description:
       'I am a full-time Staff Engineer and Solutions Architect, consulting on cybersecurity, software, DevOps, and other technical solutions for the public sector.',
-    link: 'https://agiledefense.com',
+    link: 'https://maximus.com/.com',
   },
   {
     title: 'Pearce Labs',
@@ -47,9 +47,14 @@ export const navLinks: NavLink[] = [
 
 export const pastWork: WorkItem[] = [
   {
-    title: 'XOR Security',
+    title: 'Agile Defense (2023-2026)',
+    description: 'Staff software engineer; Acquired by Maximus for $660m.',
+    link: 'https://finance.yahoo.com/technology/articles/maximus-acquire-agile-defense-advancing-210000214.html',
+  },
+  {
+    title: 'XOR Security (2015-2023)',
     description:
-      'Early engineer at a boutique cybersecurity software company. Grew from 10 employees to 150 before being acquired by Enlightenment Capital.',
+      'Early engineer at a boutique cybersecurity software company. Grew from 10 employees to 150 before being acquired by Agile Defense via Enlightenment Capital.',
     link: 'https://www.crunchbase.com/acquisition/agile-defense-acquires-xor-security--c4bddf80',
   },
   {
