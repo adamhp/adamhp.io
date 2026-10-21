@@ -7,17 +7,10 @@ import PageContainer from '../components/PageContainer.astro'
   title="Resume — adamhp.io"
   description="Resume of Adam Pearce, full-stack software engineer and solutions architect."
 >
-  <PageContainer>
-    <div class="flex justify-between items-baseline mb-4">
-      <h1 class="uppercase font-mono border-b-2 border-line">Resume</h1>
-      <a
-        href="/Adam Pearce Resume 2026.pdf"
-        download
-        class="link font-mono text-sm uppercase"
-      >Download PDF</a>
-    </div>
+  <PageContainer wide>
+    <h1 class="sr-only">Resume</h1>
     <object
-      data="/Adam Pearce Resume 2026.pdf"
+      data="/Adam Pearce Resume 2026.pdf#navpanes=0&pagemode=none&view=FitH&zoom=page-width"
       type="application/pdf"
       class="w-full h-full min-h-[calc(100vh-6rem)]"
     >
