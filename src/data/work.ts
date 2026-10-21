@@ -48,7 +48,7 @@ export const navLinks: NavLink[] = [
 export const pastWork: WorkItem[] = [
   {
     title: 'Agile Defense (2023-2026)',
-    description: 'Staff software engineer; Acquired by Maximus for $660m.',
+    description: 'Staff software engineer. Acquired by Maximus for $660m.',
     link: 'https://finance.yahoo.com/technology/articles/maximus-acquire-agile-defense-advancing-210000214.html',
   },
   {
