@@ -83,6 +83,10 @@ body {
 }
 
 @utility prose {
+  --tw-prose-body: var(--foreground);
+  --tw-prose-bold: var(--foreground-lighter);
+  --tw-prose-counters: var(--foreground);
+
   code {
     &::before,
     &::after {
@@ -108,6 +112,21 @@ pre code {
   font-size: inherit;
   font-family: var(--font-mono);
   color: var(--foreground);
+}
+
+/* Shiki dual themes: switch to the dark palette with the site theme. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) .astro-code,
+  :root:not([data-theme='light']) .astro-code span {
+    color: var(--shiki-dark) !important;
+    background-color: var(--shiki-dark-bg) !important;
+  }
+}
+
+:root[data-theme='dark'] .astro-code,
+:root[data-theme='dark'] .astro-code span {
+  color: var(--shiki-dark) !important;
+  background-color: var(--shiki-dark-bg) !important;
 }
 
 .page-wrap {

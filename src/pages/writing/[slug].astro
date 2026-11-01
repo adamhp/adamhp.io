@@ -13,6 +13,8 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props
 const { Content } = await render(post)
+const wordCount = (post.body ?? '').split(/\s+/).filter(Boolean).length
+const roughWordCount = (Math.round(wordCount / 10) * 10).toLocaleString('en-US')
 
 const proseClasses = [
   'prose',
@@ -56,10 +58,13 @@ const jsonLD = JSON.stringify({
   jsonLD={jsonLD}
 >
   <PageContainer>
-    <div class="uppercase text-foreground-lighter font-mono mb-2 text-sm">
-      Published <time datetime={post.data.published.toISOString()}>
-        {post.data.published.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' })}
-      </time>
+    <div class="flex justify-between gap-4 uppercase text-foreground font-mono mb-2 text-sm opacity-60">
+      <div>
+        Published <time datetime={post.data.published.toISOString()}>
+          {post.data.published.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' })}
+        </time>
+      </div>
+      <div>~{roughWordCount} words</div>
     </div>
     <h1 class="text-3xl font-bold mb-8">{post.data.title}</h1>
     <article class={proseClasses}>
